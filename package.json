@@ -5,6 +5,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --hot",
+    "build": "./node_modules/.bin/webpack",
+    "prod": "./node_modules/.bin/webpack -p",
+    "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
