@@ -3,8 +3,8 @@ import deepFreeze from 'deep-freeze';
 import stock from '../../../src/js/reducers/stock';
 
 describe('Reducer: stock', () => {
-  describe('update stock item action', () => {
-    it('should update stock item if item id matches action id', () => {
+  describe('remove stock item action', () => {
+    it('should remove count from stock item if item id matches action id', () => {
       const stateBefore = [
         {
           id: 0,
@@ -15,9 +15,9 @@ describe('Reducer: stock', () => {
         },
       ];
       const action = {
-        type: 'UPDATE_STOCK_ITEM',
+        type: 'REMOVE_STOCK_ITEM',
         id: 0,
-        count: 3,
+        count: 1,
       };
       const stateAfter = [
         {
@@ -37,7 +37,7 @@ describe('Reducer: stock', () => {
       ).to.deep.equal(stateAfter);
     });
 
-    it('should not update stock item if item id does not match action id', () => {
+    it('should not remove count from stock item if item id does not match action id', () => {
       const stateBefore = [
         {
           id: 0,
@@ -48,7 +48,7 @@ describe('Reducer: stock', () => {
         },
       ];
       const action = {
-        type: 'UPDATE_STOCK_ITEM',
+        type: 'REMOVE_STOCK_ITEM',
         id: 1,
         count: 2,
       };
@@ -62,7 +62,7 @@ describe('Reducer: stock', () => {
       ).to.deep.equal(stateAfter);
     });
 
-    it('should only update stock item if item id matches action id', () => {
+    it('should only remove count from stock item if item id matches action id', () => {
       const stateBefore = [
         {
           id: 0,
@@ -79,9 +79,9 @@ describe('Reducer: stock', () => {
         },
       ];
       const action = {
-        type: 'UPDATE_STOCK_ITEM',
+        type: 'REMOVE_STOCK_ITEM',
         id: 0,
-        count: 3,
+        count: 1,
       };
       const stateAfter = [
         {
@@ -109,9 +109,9 @@ describe('Reducer: stock', () => {
 
     it('should return blank array if no state is provided', () => {
       const action = {
-        type: 'UPDATE_STOCK_ITEM',
+        type: 'REMOVE_STOCK_ITEM',
         id: 0,
-        count: 3,
+        count: 1,
       };
       const stateAfter = [];
 

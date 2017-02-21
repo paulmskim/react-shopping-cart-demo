@@ -21,9 +21,9 @@ export const updateCartItem = (id, count) => (
   }
 );
 
-export const updateStockItem = (id, count) => (
+export const removeStockItem = (id, count) => (
   {
-    type: 'UPDATE_STOCK_ITEM',
+    type: 'REMOVE_STOCK_ITEM',
     id,
     count,
   }

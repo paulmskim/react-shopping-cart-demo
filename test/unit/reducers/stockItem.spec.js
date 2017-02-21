@@ -3,7 +3,7 @@ import deepFreeze from 'deep-freeze';
 import stockItem from '../../../src/js/reducers/stockItem';
 
 describe('Reducer: stockItem', () => {
-  describe('update stock item action', () => {
+  describe('remove stock item action', () => {
     it('should return state if state id does not match action id', () => {
       const stateBefore = {
         id: 0,
@@ -13,9 +13,9 @@ describe('Reducer: stockItem', () => {
         count: 4,
       };
       const action = {
-        type: 'UPDATE_STOCK_ITEM',
+        type: 'REMOVE_STOCK_ITEM',
         id: 1,
-        count: 3,
+        count: 1,
       };
       const stateAfter = stateBefore;
 
@@ -27,7 +27,7 @@ describe('Reducer: stockItem', () => {
       ).to.deep.equal(stateAfter);
     });
 
-    it('should update count if state id matches action id', () => {
+    it('should remove count from state if state id matches action id', () => {
       const stateBefore = {
         id: 0,
         name: 'Item 1',
@@ -36,9 +36,9 @@ describe('Reducer: stockItem', () => {
         count: 4,
       };
       const action = {
-        type: 'UPDATE_STOCK_ITEM',
+        type: 'REMOVE_STOCK_ITEM',
         id: 0,
-        count: 3,
+        count: 1,
       };
       const stateAfter = {
         ...stateBefore,
@@ -66,7 +66,7 @@ describe('Reducer: stockItem', () => {
       const action = {
         type: 'UNKNOWN_ACTION',
         id: 0,
-        count: 3,
+        count: 1,
       };
       const stateAfter = stateBefore;
 
@@ -88,7 +88,7 @@ describe('Reducer: stockItem', () => {
       };
       const action = {
         id: 0,
-        count: 3,
+        count: 1,
       };
       const stateAfter = stateBefore;
 

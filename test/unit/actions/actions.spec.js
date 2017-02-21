@@ -4,7 +4,7 @@ import {
   addToCart,
   removeFromCart,
   updateCartItem,
-  updateStockItem
+  removeStockItem
 } from '../../../src/js/actions/actions';
 
 describe('Actions', () => {
@@ -62,12 +62,12 @@ describe('Actions', () => {
     });
   });
 
-  describe('update stock item action', () => {
-    it('should return action update stock item with id and count provided', () => {
+  describe('remove stock item action', () => {
+    it('should return action remove stock item with id and count provided', () => {
       const inputId = 0;
       const inputCount = 1;
       const output = {
-        type: 'UPDATE_STOCK_ITEM',
+        type: 'REMOVE_STOCK_ITEM',
         id: inputId,
         count: inputCount,
       };
@@ -76,7 +76,7 @@ describe('Actions', () => {
       deepFreeze(inputCount);
 
       expect(
-        updateStockItem(inputId, inputCount)
+        removeStockItem(inputId, inputCount)
       ).to.deep.equal(output);
     });
   });
