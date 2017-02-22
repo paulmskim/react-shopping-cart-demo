@@ -3,7 +3,7 @@ import ShopItemList from './Shop/ShopItemList';
 
 const Shop = () => (
   <div className='shop'>
-    <h1 className='shop-header'>Shop</h1>
+    <h1 className='main-header shop-header'>Shop</h1>
     <ShopItemList />
   </div>
 );
