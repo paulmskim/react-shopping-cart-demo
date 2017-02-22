@@ -2,18 +2,18 @@ import React, { PropTypes } from 'react';
 import AddItem from './AddItem';
 
 const ItemDetails = ({ id, name, description, price }) => (
-  <div className={'item-details item-details-' + id}>
-    <h1 className='item-details-name'>
+  <div className={'item item-' + id}>
+    <h1 className='item-name'>
       {name}
     </h1>
     <img
-      className='item-details-image'
+      className='item-image'
       src={'/assets/' + name.replace(/\s/g, '-').toLowerCase() + '.jpg'}
     />
-    <h2 className='item-details-price'>
+    <h2 className='item-price'>
       ${price.toFixed(2)}
     </h2>
-    <p className='item-details-desc'>
+    <p className='item-desc'>
       {description}
     </p>
     <AddItem id={id} />

@@ -3,11 +3,11 @@ import ShopItem from './ShopItem';
 
 const ShopItems = ({ items }) => {
   if (!items.length) {
-    return <p className='no-items'>No items</p>;
+    return <p className='no-shop-items'>No items</p>;
   }
 
   return (
-    <ul className='item-list'>
+    <ul className='shop-item-list'>
       {items.map(item =>
         <ShopItem
           key={item.id}

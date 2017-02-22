@@ -3,7 +3,7 @@ import { addToCart, updateCartItem } from '../../actions/actions';
 import AddItemForm from './AddItemForm';
 
 const getSelectedValue = (e) => (
-  e.target.getElementsByClassName('item-details-qty')[0].value
+  e.target.getElementsByClassName('item-qty')[0].value
 );
 
 const mapStateToProps = (state, ownProps) => (

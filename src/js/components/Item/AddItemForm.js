@@ -4,7 +4,7 @@ import getOptionsArray from '../../functions/getOptionsArray';
 const AddItemForm = ({ id, count, onSubmit }) => {
   if (!count) {
     return (
-      <p className='item-details-sold-out'>
+      <p className='item-sold-out'>
         Sold out!
       </p>
     );
@@ -12,16 +12,16 @@ const AddItemForm = ({ id, count, onSubmit }) => {
 
   return (
     <form
-      className='item-details-add-form'
+      className='item-add-form'
       onSubmit={e => {
         e.preventDefault();
         onSubmit(e, id);
       }}
     >
-      <span className='item-details-qty-label'>
+      <span className='item-qty-label'>
         Qty:
       </span>
-      <select className='item-details-qty'>
+      <select className='item-qty'>
         {getOptionsArray(count).map(num =>
           <option
             key={num}
@@ -32,7 +32,7 @@ const AddItemForm = ({ id, count, onSubmit }) => {
         )}
       </select>
       <button
-        className='item-details-add-button'
+        className='item-add-button'
         type='submit'
       >
         Add to cart

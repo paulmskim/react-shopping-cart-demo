@@ -2,17 +2,17 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const ShopItem = ({ id, name, price }) => (
-  <li className={'item item-' + id}>
+  <li className={'shop-item shop-item-' + id}>
     <Link to={'/item/' + id}>
-      <div className='item-container'>
+      <div className='shop-item-container'>
         <img
-          className='item-image'
+          className='shop-item-image'
           src={'assets/' + name.replace(/\s/g, '-').toLowerCase() + '-shop.jpg'}
         />
-        <h1 className='item-name'>
+        <h1 className='shop-item-name'>
           {name}
         </h1>
-        <h2 className='item-price'>
+        <h2 className='shop-item-price'>
           ${price.toFixed(2)}
         </h2>
       </div>
