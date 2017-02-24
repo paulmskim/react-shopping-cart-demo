@@ -1,0 +1,8 @@
+.item-qty, .cart-item-qty-select {
+  font-size: $qtySelectFontSize;
+  color: $fontColor;
+  width: 2.75rem;
+  background-color: $selectBgColor;
+  border: 0.0625rem solid $selectBorderColor;
+  border-radius: 0.25rem;
+}

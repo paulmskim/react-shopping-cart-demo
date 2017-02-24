@@ -1,0 +1,45 @@
+.shop-item {
+  margin: 2rem auto;
+  max-width: $shopItemMaxWidth;
+  border: 0.0625rem solid $linkColor;
+  box-shadow: 0 0 0.625rem 0.25rem $linkColor;
+}
+
+.shop-item-image, .shop-item-name, .shop-item-price {
+  padding: 0.5rem 0.75rem;
+}
+
+.shop-item-image {
+  margin: 0;
+}
+
+.shop-item-name {
+  font-size: $shopItemNameFontSize;
+}
+
+.shop-item-price {
+  font-size: $shopItemPriceFontSize;
+  font-weight: normal;
+  padding-bottom: 1rem;
+}
+
+@include breakpoint($smallTabletBP) {
+  .shop-item-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .shop-item {
+    flex: 0 0 43%;
+    margin: 2rem 3.5%;
+  }
+}
+
+@include breakpoint($largeTabletBP) {
+  .shop-item {
+    flex: 0 0 29%;
+    margin: 2rem 2.166%;
+  }
+}

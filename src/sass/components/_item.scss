@@ -1,0 +1,50 @@
+.item {
+  max-width: $itemMobileMaxWidth;
+  margin: 0 auto;
+}
+
+.item-name, .item-price {
+  padding: 0.25rem 0;
+}
+
+.item-name {
+  font-size: $itemNameFontSize;
+}
+
+.item-price {
+  font-size: $itemPriceFontSize;
+  font-weight: normal;
+}
+
+.item-add-form, .item-sold-out {
+  margin: 2.5rem 0 0;
+}
+
+.item-add-form {
+  text-align: center;
+}
+
+.item-qty-label {
+  margin-right: 0.5rem;
+}
+
+.item-sold-out {
+  color: $itemSoldOutColor;
+}
+
+@include breakpoint($itemBP) {
+  .item {
+    display: flex;
+    max-width: $itemDesktopMaxWidth;
+    padding: 2rem 0 0;
+  }
+
+  .item-image {
+    flex: 0 0 auto;
+  }
+
+  .item-details {
+    flex: 1 1 auto;
+    padding: 2rem 0 1rem 2rem;
+  }
+}

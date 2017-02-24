@@ -1,0 +1,21 @@
+html {
+  font-size: $rootFontSize;
+}
+
+body {
+  font-family: $fontFamily;
+  color: $fontColor;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.2s;
+  color: $linkColor;
+  &:hover, &:active, &:focus {
+    color: $linkActiveColor;
+  }
+}
+
+h1, h2 {
+  margin: 0;
+}

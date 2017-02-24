@@ -1,0 +1,19 @@
+.item-add-button, .cart-pay-button {
+  font-size: $buttonFontSize;
+  font-weight: bold;
+  color: $buttonFontColor;
+  background-color: $buttonBgColor;
+  display: block;
+  width: 100%;
+  max-width: $buttonMaxWidth;
+  padding: 0.25rem 0.5rem;
+  margin: 1.5rem auto 0;
+  border: none;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.375rem $buttonBorderColor;
+  transition: 0.2s;
+  &:active {
+    transform: translateY(0.375rem);
+    box-shadow: 0 0 $buttonBorderColor;
+  }
+}
