@@ -6,14 +6,20 @@ const CartItem = (
   { id, name, price, count, stockCount, onQtyChange, onRemoveClick }
 ) => (
   <li className='cart-item'>
-    <Link to={'/item/' + id}>
+    <Link
+      to={'/item/' + id}
+      className='cart-item-image-link'
+    >
       <img
         className='cart-item-image'
         src={'/assets/' + name.replace(/\s/g, '-').toLowerCase() + '-cart.jpg'}
       />
     </Link>
     <div className='cart-item-info'>
-      <Link to={'/item/' + id}>
+      <Link
+        to={'/item/' + id}
+        className='cart-item-name-link'
+      >
         <h1 className='cart-item-name'>
           {name}
         </h1>

@@ -17,8 +17,10 @@ const Header = ({ children, cartItems, backButton, cartButton }) => {
   return (
     <div className='shopping-cart-app'>
       <header className='header'>
-        {backButton ? getBackButton() : ''}
-        {cartButton ? getCartButton() : ''}
+        <div className='header-contents'>
+          {backButton ? getBackButton() : ''}
+          {cartButton ? getCartButton() : ''}
+        </div>
       </header>
       <main className='main'>
         {children}
