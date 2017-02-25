@@ -5,7 +5,7 @@ import getOptionsArray from '../../functions/getOptionsArray';
 const CartItem = (
   { id, name, price, count, stockCount, onQtyChange, onRemoveClick }
 ) => (
-  <li className='cart-item'>
+  <li className={'cart-item cart-item-' + id}>
     <Link
       to={'/item/' + id}
       className='cart-item-image-link'
