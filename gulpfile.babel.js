@@ -7,14 +7,17 @@ import runSequence from 'run-sequence';
 import sass from 'gulp-sass';
 import importer from 'node-sass-globbing';
 import plumber from 'gulp-plumber';
-import { log } from 'gulp-util';
+import { log, PluginError } from 'gulp-util';
 import autoprefixer from 'gulp-autoprefixer';
 import cleancss from 'gulp-clean-css';
 import rename from 'gulp-rename';
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import webdriver from 'gulp-webdriver';
 
 const SRC_JS_FILES = 'src/js/**/*.js';
 const SRC_SCSS_FILES = 'src/sass/**/*.scss';
-const TEST_FILES = 'test/unit/test.js';
+const UNIT_TEST_FILES = 'test/unit/test.js';
 const SASS_CONFIG = {
   style: 'expanded',
   importer: importer,
@@ -22,6 +25,8 @@ const SASS_CONFIG = {
     'node_modules/breakpoint-sass/stylesheets/',
   ],
 };
+
+let server;
 
 gulp.task('default', () => {
   // do nothing
@@ -45,7 +50,7 @@ gulp.task('coverage:report', (done) => (
 ));
 
 gulp.task('unit-test', () => (
-  gulp.src(TEST_FILES, { read: false })
+  gulp.src(UNIT_TEST_FILES, { read: false })
     .pipe(mocha({
       reporter: 'spec',
     }))
@@ -75,4 +80,34 @@ gulp.task('sass', () => {
 gulp.task('sass:watch', () => {
   log('Watching scss files for modifications');
   gulp.watch(SRC_SCSS_FILES, ['sass']);
+});
+
+gulp.task('webpack-dev-server:open', () => {
+  server = new WebpackDevServer(
+    webpack(require('./webpack.config')), {
+      contentBase: 'dist',
+    }
+  );
+  return server.listen(8080, 'localhost', (err) => {
+    if (err) throw new PluginError('webpack-dev-server', err);
+    log('[webpack-dev-server]', 'http://localhost:8080');
+  });
+});
+
+gulp.task('webpack-dev-server:close', () => (
+  server.close()
+));
+
+gulp.task('webdriverio-test', () => (
+  gulp.src('wdio.conf.js')
+    .pipe(webdriver())
+));
+
+gulp.task('integration-test', (done) => {
+  runSequence(
+    'webpack-dev-server:open',
+    'webdriverio-test',
+    'webpack-dev-server:close',
+    done
+  );
 });
