@@ -10,6 +10,8 @@
     "build": "./node_modules/.bin/webpack",
     "prod": "./node_modules/.bin/webpack -p",
     "server": "node server.js",
+    "unit-test": "./node_modules/.bin/gulp unit-test:coverage",
+    "integration-test": "./node_modules/.bin/gulp integration-test",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

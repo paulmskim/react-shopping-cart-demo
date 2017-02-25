@@ -29,16 +29,10 @@ asset or `npm run prod` to build a production-optimized asset.
 
 ## Testing
 
-To run unit tests, ensure you have gulp installed globally and run:
+To run unit tests, run:
 
 ```
-gulp unit-test:coverage
-```
-
-If gulp is not installed globally, run:
-
-```
-./node_modules/.bin/gulp unit-test:coverage
+npm run unit-test
 ```
 
 Coverage of components can be see in `/coverage`.
@@ -46,13 +40,7 @@ Coverage of components can be see in `/coverage`.
 To run integration tests, run:
 
 ```
-gulp integration-test
-```
-
-or
-
-```
-./node_modules/.bin/gulp integration-test
+npm run integration-test
 ```
 
 Ensure you have at least Firefox 49 for integration tests. Webdriverio
