@@ -10,6 +10,7 @@ import LocationHeader from './LocationHeader';
 import Shop from './Shop';
 import Item from './Item';
 import Cart from './Cart';
+import NoMatch from './NoMatch';
 
 const App = () => (
   <Router history={browserHistory}>
@@ -17,6 +18,7 @@ const App = () => (
       <IndexRoute component={Shop} />
       <Route path='item/:id' component={Item} />
       <Route path='cart' component={Cart} />
+      <Route path='*' component={NoMatch} />
     </Route>
   </Router>
 );

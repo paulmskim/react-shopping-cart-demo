@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import Header from './LocationHeader/Header';
 
 const showBackButton = (pathname) => (
-  pathname.includes('cart') || pathname.includes('item') ? true : false
+  pathname !== '/' ? true : false
 );
 
 const showCartButton = (pathname) => (
-  pathname === '/' || pathname.includes('item') ? true : false
+  !pathname.includes('cart') ? true : false
 );
 
 const mapStateToProps = (state, ownProps) => (
