@@ -11,7 +11,7 @@ module.exports = {
     inline: true,
     contentBase: './dist',
   },
-  devtool: debug ? 'inline-sourcemap' : null,
+  devtool: debug ? 'cheap-module-source-map' : null,
   module: {
     loaders: [
       {
