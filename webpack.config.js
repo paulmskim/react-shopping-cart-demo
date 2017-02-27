@@ -8,20 +8,23 @@ module.exports = {
     filename: 'index.min.js',
   },
   devServer: {
-    inline: true,
     contentBase: './dist',
   },
-  devtool: debug ? 'cheap-module-source-map' : null,
+  devtool: debug ? 'cheap-module-source-map' : 'eval',
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react'],
-          plugins: ['transform-object-rest-spread'],
-        },
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015', 'react'],
+              plugins: ['transform-object-rest-spread'],
+            },
+          },
+        ],
       },
     ],
   },

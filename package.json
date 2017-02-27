@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "./node_modules/.bin/selenium-standalone install",
     "kill-selenium": "pkill -f selenium-standalone",
-    "dev": "./node_modules/.bin/webpack-dev-server --hot",
+    "dev": "./node_modules/.bin/webpack-dev-server --inline --hot",
     "build": "./node_modules/.bin/webpack",
     "prod": "./node_modules/.bin/webpack -p",
     "server": "node server.js",
