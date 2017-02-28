@@ -9,6 +9,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
   },
   devtool: debug ? 'cheap-module-source-map' : 'eval',
   module: {
