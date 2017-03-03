@@ -4,14 +4,14 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "postinstall": "./node_modules/.bin/selenium-standalone install",
+    "postinstall": "selenium-standalone install",
     "kill-selenium": "pkill -f selenium-standalone",
-    "dev": "./node_modules/.bin/webpack-dev-server --inline --hot",
-    "build": "./node_modules/.bin/webpack",
-    "prod": "./node_modules/.bin/webpack -p",
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "webpack",
+    "prod": "webpack -p",
     "server": "node server.js",
-    "unit-test": "./node_modules/.bin/gulp unit-test:coverage",
-    "integration-test": "./node_modules/.bin/gulp integration-test",
+    "unit-test": "gulp unit-test:coverage",
+    "integration-test": "gulp integration-test",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
