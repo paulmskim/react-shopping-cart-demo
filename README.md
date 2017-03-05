@@ -1,7 +1,11 @@
 # react-shopping-cart-demo
 
-A shopping cart demo made with React, Redux, and React-router.
-This demo includes unit and integration tests.
+A shopping cart demo made with React, Redux, and React-router. This demo
+includes unit and integration tests. An interactive demo can be found on
+[Codepen](http://codepen.io/paulkim/full/oZLavq/).
+
+![alt text](./img/react-shopping-cart.gif "React Shopping Cart Demo")
+
 
 ## Getting started
 
