@@ -43,7 +43,7 @@ const AddItem = ({ id, count, onSubmit }) => {
 
 AddItem.PropTypes = {
   count: PropTypes.number.isRequired,
-  onClic: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default AddItem;
