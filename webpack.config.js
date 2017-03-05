@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: __dirname + '/src/js/index.js',
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/dist/js',
     filename: 'index.min.js',
   },
   devServer: {

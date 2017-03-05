@@ -74,7 +74,7 @@ gulp.task('sass', () => {
     .pipe(autoprefixer({ browsers: ['last 2 versions', 'safari 5', 'ie 9'] }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleancss())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('sass:watch', () => {
