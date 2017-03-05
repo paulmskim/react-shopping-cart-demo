@@ -6,15 +6,15 @@ import {
   IndexRoute,
   browserHistory
 } from 'react-router';
-import LocationHeader from './LocationHeader';
-import Shop from './Shop';
-import Item from './Item';
-import Cart from './Cart';
-import NoMatch from './NoMatch';
+import Header from './container/Header';
+import Shop from './presentational/Shop';
+import Item from './container/Item';
+import Cart from './container/Cart';
+import NoMatch from './presentational/NoMatch';
 
 const App = () => (
   <Router history={browserHistory}>
-    <Route path='/' component={LocationHeader}>
+    <Route path='/' component={Header}>
       <IndexRoute component={Shop} />
       <Route path='item/:id' component={Item} />
       <Route path='cart' component={Cart} />

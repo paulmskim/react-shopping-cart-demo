@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import AddItem from './AddItem';
+import AddItem from '../container/AddItem';
 
-const ItemDetails = ({ id, name, description, price }) => (
+const Item = ({ id, name, description, price }) => (
   <div className={'item item-' + id}>
     <img
       className='item-image'
@@ -22,11 +22,11 @@ const ItemDetails = ({ id, name, description, price }) => (
   </div>
 );
 
-ItemDetails.PropTypes = {
+Item.PropTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
 };
 
-export default ItemDetails;
+export default Item;

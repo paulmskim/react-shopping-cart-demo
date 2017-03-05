@@ -1,12 +1,10 @@
 import { connect } from 'react-redux';
-import ItemDetails from './Item/ItemDetails';
+import Item from '../presentational/Item';
 
 const mapStateToProps = (state, ownProps) => (
   state.stock.find(item => String(item.id) === ownProps.params.id)
 );
 
-const Item = connect(
+export default connect(
   mapStateToProps
-)(ItemDetails);
-
-export default Item;
+)(Item);

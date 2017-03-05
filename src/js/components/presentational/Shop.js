@@ -1,10 +1,10 @@
 import React from 'react';
-import ShopItemList from './Shop/ShopItemList';
+import ShopItems from '../container/ShopItems';
 
 const Shop = () => (
   <div className='shop'>
     <h1 className='main-header shop-header'>Shop</h1>
-    <ShopItemList />
+    <ShopItems />
   </div>
 );
 

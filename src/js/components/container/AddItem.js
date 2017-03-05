@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { addToCart, updateCartItem } from '../../actions/actions';
-import AddItemForm from './AddItemForm';
+import AddItem from '../presentational/AddItem';
 
 const getSelectedValue = (e) => (
   e.target.getElementsByClassName('item-qty')[0].value
@@ -24,10 +24,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   });
 };
 
-const AddItem = connect(
+export default connect(
   mapStateToProps,
   null,
   mergeProps
-)(AddItemForm);
-
-export default AddItem;
+)(AddItem);

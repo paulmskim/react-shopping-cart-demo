@@ -3,7 +3,7 @@ import CartItems from './CartItems';
 import Total from './Total';
 import PayButton from './PayButton';
 
-const CartPage = ({ cart, onQtyChange, onRemoveClick, onPayClick }) => (
+const Cart = ({ cart, onQtyChange, onRemoveClick, onPayClick }) => (
   <div className='cart'>
     <h1 className='main-header cart-header'>My Cart</h1>
     <CartItems
@@ -16,7 +16,7 @@ const CartPage = ({ cart, onQtyChange, onRemoveClick, onPayClick }) => (
   </div>
 );
 
-CartPage.PropTypes = {
+Cart.PropTypes = {
   cart: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
@@ -29,4 +29,4 @@ CartPage.PropTypes = {
   onPayClick: PropTypes.func.isRequired,
 };
 
-export default CartPage;
+export default Cart;

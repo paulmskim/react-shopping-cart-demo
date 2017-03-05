@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ShopItems from './ShopItems';
+import ShopItems from '../presentational/ShopItems';
 
 const mapStateToProps = (state) => (
   {
@@ -7,8 +7,6 @@ const mapStateToProps = (state) => (
   }
 );
 
-const ShopItemList = connect(
+export default connect(
   mapStateToProps
 )(ShopItems);
-
-export default ShopItemList;

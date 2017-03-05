@@ -3,8 +3,8 @@ import {
   removeFromCart,
   updateCartItem,
   removeStockItem
-} from '../actions/actions';
-import CartPage from './Cart/CartPage';
+} from '../../actions/actions';
+import Cart from '../presentational/Cart';
 
 const getSelectedValue = (e) => (
   e.target.value
@@ -50,10 +50,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (
   })
 );
 
-const Cart = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps
-)(CartPage);
-
-export default Cart;
+)(Cart);

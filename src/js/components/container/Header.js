@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Header from './LocationHeader/Header';
+import Header from '../presentational/Header';
 
 const showBackButton = (pathname) => (
   pathname !== '/' ? true : false
@@ -18,8 +18,6 @@ const mapStateToProps = (state, ownProps) => (
   }
 );
 
-const LocationHeader = connect(
+export default connect(
   mapStateToProps
 )(Header);
-
-export default LocationHeader;

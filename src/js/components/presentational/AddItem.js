@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import getOptionsArray from '../../functions/getOptionsArray';
 
-const AddItemForm = ({ id, count, onSubmit }) => {
+const AddItem = ({ id, count, onSubmit }) => {
   if (!count) {
     return (
       <p className='item-sold-out'>
@@ -41,9 +41,9 @@ const AddItemForm = ({ id, count, onSubmit }) => {
   );
 };
 
-AddItemForm.PropTypes = {
+AddItem.PropTypes = {
   count: PropTypes.number.isRequired,
   onClic: PropTypes.func.isRequired,
 };
 
-export default AddItemForm;
+export default AddItem;
