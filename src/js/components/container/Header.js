@@ -1,13 +1,9 @@
 import { connect } from 'react-redux';
 import Header from '../presentational/Header';
 
-const showBackButton = (pathname) => (
-  pathname !== '/' ? true : false
-);
+const showBackButton = pathname => pathname !== '/';
 
-const showCartButton = (pathname) => (
-  !pathname.includes('cart') ? true : false
-);
+const showCartButton = pathname => !pathname.includes('cart');
 
 const mapStateToProps = (state, ownProps) => (
   {
@@ -19,5 +15,5 @@ const mapStateToProps = (state, ownProps) => (
 );
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(Header);

@@ -4,8 +4,8 @@ import Total from './Total';
 import PayButton from './PayButton';
 
 const Cart = ({ cart, onQtyChange, onRemoveClick, onPayClick }) => (
-  <div className='cart'>
-    <h1 className='main-header cart-header'>My Cart</h1>
+  <div className="cart">
+    <h1 className="main-header cart-header">My Cart</h1>
     <CartItems
       cart={cart}
       onQtyChange={onQtyChange}
@@ -16,7 +16,7 @@ const Cart = ({ cart, onQtyChange, onRemoveClick, onPayClick }) => (
   </div>
 );
 
-Cart.PropTypes = {
+Cart.propTypes = {
   cart: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,

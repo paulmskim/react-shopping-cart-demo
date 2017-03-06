@@ -2,9 +2,8 @@ import React from 'react';
 import {
   Router,
   Route,
-  Link,
   IndexRoute,
-  browserHistory
+  browserHistory,
 } from 'react-router';
 import Header from './container/Header';
 import Shop from './presentational/Shop';
@@ -14,11 +13,11 @@ import NoMatch from './presentational/NoMatch';
 
 const App = () => (
   <Router history={browserHistory}>
-    <Route path='/' component={Header}>
+    <Route path="/" component={Header}>
       <IndexRoute component={Shop} />
-      <Route path='item/:id' component={Item} />
-      <Route path='cart' component={Cart} />
-      <Route path='*' component={NoMatch} />
+      <Route path="item/:id" component={Item} />
+      <Route path="cart" component={Cart} />
+      <Route path="*" component={NoMatch} />
     </Route>
   </Router>
 );

@@ -4,7 +4,7 @@ import getOptionsArray from '../../functions/getOptionsArray';
 const AddItem = ({ id, count, onSubmit }) => {
   if (!count) {
     return (
-      <p className='item-sold-out'>
+      <p className="item-sold-out">
         Sold out!
       </p>
     );
@@ -12,28 +12,28 @@ const AddItem = ({ id, count, onSubmit }) => {
 
   return (
     <form
-      className='item-add-form'
-      onSubmit={e => {
+      className="item-add-form"
+      onSubmit={(e) => {
         e.preventDefault();
         onSubmit(e, id);
       }}
     >
-      <span className='item-qty-label'>
+      <span className="item-qty-label">
         Qty:
       </span>
-      <select className='item-qty'>
-        {getOptionsArray(count).map(num =>
+      <select className="item-qty">
+        {getOptionsArray(count).map(num => (
           <option
             key={num}
             value={num}
           >
             {num}
           </option>
-        )}
+        ))}
       </select>
       <button
-        className='item-add-button'
-        type='submit'
+        className="item-add-button"
+        type="submit"
       >
         Add to cart
       </button>
@@ -41,9 +41,10 @@ const AddItem = ({ id, count, onSubmit }) => {
   );
 };
 
-AddItem.PropTypes = {
+AddItem.propTypes = {
+  id: PropTypes.number.isRequired,
   count: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default AddItem;

@@ -3,12 +3,12 @@ import CartItem from './CartItem';
 
 const CartItems = ({ cart, onQtyChange, onRemoveClick }) => {
   if (!cart.length) {
-    return <p className='empty-cart'>Cart is empty</p>;
+    return <p className="empty-cart">Cart is empty</p>;
   }
 
   return (
-    <ul className='cart-items'>
-      {cart.map(item =>
+    <ul className="cart-items">
+      {cart.map(item => (
         <CartItem
           key={item.id}
           id={item.id}
@@ -19,12 +19,12 @@ const CartItems = ({ cart, onQtyChange, onRemoveClick }) => {
           onQtyChange={(e, id) => onQtyChange(e, id)}
           onRemoveClick={(e, id) => onRemoveClick(e, id)}
         />
-      )}
+      ))}
     </ul>
   );
 };
 
-CartItems.PropTypes = {
+CartItems.propTypes = {
   cart: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,

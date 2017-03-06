@@ -6,7 +6,7 @@ export const addToCart = (id, count) => (
   }
 );
 
-export const removeFromCart = (id) => (
+export const removeFromCart = id => (
   {
     type: 'REMOVE_FROM_CART',
     id,

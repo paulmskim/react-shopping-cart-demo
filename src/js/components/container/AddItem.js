@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { addToCart, updateCartItem } from '../../actions/actions';
 import AddItem from '../presentational/AddItem';
 
-const getSelectedValue = (e) => (
+const getSelectedValue = e => (
   e.target.getElementsByClassName('item-qty')[0].value
 );
 
@@ -27,5 +27,5 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 export default connect(
   mapStateToProps,
   null,
-  mergeProps
+  mergeProps,
 )(AddItem);

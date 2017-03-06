@@ -20,7 +20,7 @@ const SRC_SCSS_FILES = 'src/sass/**/*.scss';
 const UNIT_TEST_FILES = 'test/unit/test.js';
 const SASS_CONFIG = {
   style: 'expanded',
-  importer: importer,
+  importer,
   includePaths: [
     'node_modules/breakpoint-sass/stylesheets/',
   ],
@@ -44,7 +44,7 @@ gulp.task('coverage:instrument', () => (
     .pipe(istanbul.hookRequire())
 ));
 
-gulp.task('coverage:report', (done) => (
+gulp.task('coverage:report', () => (
   gulp.src(SRC_JS_FILES, { read: false })
     .pipe(istanbul.writeReports())
 ));
@@ -62,12 +62,12 @@ gulp.task('unit-test:coverage', (done) => {
     'coverage:instrument',
     'unit-test',
     'coverage:report',
-    done
+    done,
   );
 });
 
 gulp.task('sass', () => {
-  log('Generate CSS files ' + (new Date()).toString());
+  log(`Generate CSS files ${(new Date()).toString()}`);
   gulp.src(SRC_SCSS_FILES)
     .pipe(plumber())
     .pipe(sass(SASS_CONFIG))
@@ -86,7 +86,7 @@ gulp.task('webpack-dev-server:open', () => {
   server = new WebpackDevServer(
     webpack(require('./webpack.config')), {
       contentBase: 'dist',
-    }
+    },
   );
   return server.listen(8080, 'localhost', (err) => {
     if (err) throw new PluginError('webpack-dev-server', err);
@@ -108,6 +108,6 @@ gulp.task('integration-test', (done) => {
     'webpack-dev-server:open',
     'webdriverio-test',
     'webpack-dev-server:close',
-    done
+    done,
   );
 });

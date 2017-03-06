@@ -2,17 +2,15 @@ import { connect } from 'react-redux';
 import {
   removeFromCart,
   updateCartItem,
-  removeStockItem
+  removeStockItem,
 } from '../../actions/actions';
 import Cart from '../presentational/Cart';
 
-const getSelectedValue = (e) => (
-  e.target.value
-);
+const getSelectedValue = e => e.target.value;
 
-const mapStateToProps = (state) => (
+const mapStateToProps = state => (
   {
-    cart: state.cart.map(cartItem => {
+    cart: state.cart.map((cartItem) => {
       const item = state.stock.find(stockItem => cartItem.id === stockItem.id);
       return {
         id: cartItem.id,
@@ -25,7 +23,7 @@ const mapStateToProps = (state) => (
   }
 );
 
-const mapDispatchToProps = (dispatch) => (
+const mapDispatchToProps = dispatch => (
   {
     onQtyChange: (e, id) => {
       dispatch(updateCartItem(id, getSelectedValue(e)));
@@ -36,22 +34,24 @@ const mapDispatchToProps = (dispatch) => (
       dispatch(removeFromCart(id));
     },
 
-    dispatch: (reducer) => dispatch(reducer),
+    dispatch,
   }
 );
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => (
   Object.assign({}, ownProps, stateProps, dispatchProps, {
     onPayClick: () =>
-      stateProps.cart.map(item => {
-        dispatchProps.dispatch(removeStockItem(item.id, item.count));
-        dispatchProps.dispatch(removeFromCart(item.id));
-      }),
+      stateProps.cart.map(item => (
+        (() => {
+          dispatchProps.dispatch(removeStockItem(item.id, item.count));
+          dispatchProps.dispatch(removeFromCart(item.id));
+        })()
+      )),
   })
 );
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-  mergeProps
+  mergeProps,
 )(Cart);
